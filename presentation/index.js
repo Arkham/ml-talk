@@ -59,6 +59,8 @@ preloader(images);
 
 const theme = createTheme({
   primary: "#ff4081"
+}, {
+  primary: "Futura"
 });
 
 export default class Presentation extends React.Component {
@@ -77,7 +79,7 @@ export default class Presentation extends React.Component {
   intermezzo(title) {
     return (
       <Slide bgColor="tertiary">
-        <Heading size={3} textColor="primary">{title}</Heading>
+        <Heading size={4} caps textColor="primary">{title}</Heading>
       </Slide>
     );
   }
@@ -93,13 +95,13 @@ export default class Presentation extends React.Component {
       <Spectacle theme={theme}>
         <Deck transition={["fade", "spin"]} transitionDuration={500}>
           <Slide>
-            <Heading textFont="Futura" size={1} fit caps lineHeight={1.2}>
+            <Heading size={1} fit caps lineHeight={1.2}>
               [ 2001: A Space Odissey ]
             </Heading>
-            <Heading textFont="Futura" size={1} fit caps lineHeight={1.2}>
+            <Heading size={1} fit caps lineHeight={1.2}>
               [ Blade Runner ] [ The Matrix ]
             </Heading>
-            <Heading textFont="Futura" size={1} fit caps lineHeight={1.3}>
+            <Heading size={1} fit caps lineHeight={1.3}>
               [ And ] [ Now ] [ <S type="bold" style={{color: "black"}}>You</S> ]
             </Heading>
           </Slide>
@@ -125,7 +127,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide bgColor="black">
-            <Heading>artificial intelligence</Heading>
+            <Heading fit>artificial intelligence</Heading>
             <Text italic textColor="white">noun</Text>
             <BlockQuote>
               <Quote textSize="3rem">the theory and development of computer systems able to perform tasks normally requiring human intelligence, such as visual perception, speech recognition, decision-making, and translation between languages.</Quote>
