@@ -62,6 +62,32 @@ const theme = createTheme({
 });
 
 export default class Presentation extends React.Component {
+  image(src, { border = false, width = "100%" } = {}) {
+    if (border) {
+      return (
+        <Image src={src} width={width} style={{border: "8px solid black"}} />
+      );
+    } else {
+      return (
+        <Image src={src} width={width} />
+      );
+    }
+  }
+
+  intermezzo(title) {
+    return (
+      <Slide bgColor="tertiary">
+        <Heading size={3} textColor="primary">{title}</Heading>
+      </Slide>
+    );
+  }
+
+  ytEmbed(src) {
+    return (
+      <iframe width="800" height="600" src={src} frameBorder="0" allowFullScreen></iframe>
+    );
+  }
+
   render() {
     return (
       <Spectacle theme={theme}>
@@ -79,23 +105,23 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Image src={images.lance} width="100%"/>
+            {this.image(images.lance)}
           </Slide>
 
           <Slide>
-            <Image src={images.roy} style={{border: "10px solid black"}} width="100%"/>
+            {this.image(images.roy, { border: true })}
           </Slide>
 
           <Slide>
-            <Image src={images.terminator} width="100%"/>
+            {this.image(images.terminator)}
           </Slide>
 
           <Slide>
-            <Image src={images.agentSmith} style={{border: "10px solid black"}} width="100%"/>
+            {this.image(images.agentSmith, { border: true })}
           </Slide>
 
           <Slide>
-            <Image src={images.hal} width="100%"/>
+            {this.image(images.hal)}
           </Slide>
 
           <Slide bgColor="black">
@@ -119,60 +145,54 @@ export default class Presentation extends React.Component {
             <Heading fit caps textColor="black">In The Wild!</Heading>
           </Slide>
 
-          <Slide bgColor="tertiary">
-            <Heading size={3} textColor="primary">Image Processing</Heading>
+          {this.intermezzo("Image Processing")}
+
+          <Slide>
+            {this.image(images.ocr, { width: "90%" })}
           </Slide>
 
           <Slide>
-            <Image src={images.ocr} width="90%" />
+            {this.image(images.fbTag, { width: "90%" })}
           </Slide>
 
           <Slide>
-            <Image src={images.fbTag} width="90%" />
+            {this.image(images.googleCar, { width: "90%" })}
+          </Slide>
+
+          {this.intermezzo("Text Processing")}
+
+          <Slide>
+            {this.image(images.spamAssassin, { border: true, width: "auto" })}
           </Slide>
 
           <Slide>
-            <Image src={images.googleCar} width="90%" />
-          </Slide>
-
-          <Slide bgColor="tertiary">
-            <Heading size={3} textColor="primary">Text Processing</Heading>
+            {this.image(images.sentiment, { border: true })}
           </Slide>
 
           <Slide>
-            <Image src={images.spamAssassin} style={{border: "10px solid black"}} />
+            {this.image(images.infoExtraction, { border: true })}
           </Slide>
 
-          <Slide>
-            <Image src={images.sentiment} style={{border: "10px solid black"}} width="100%"/>
-          </Slide>
-
-          <Slide>
-            <Image src={images.infoExtraction} style={{border: "10px solid black"}} width="100%"/>
-          </Slide>
-
-          <Slide bgColor="tertiary">
-            <Heading textColor="primary" size={3}>Games & Robotics</Heading>
-          </Slide>
+          {this.intermezzo("Games & Robotics")}
 
           <Slide tranition={["fade"]}>
-            <Image src={images.alphaGo} style={{border: "10px solid black"}} width="90%" />
+            {this.image(images.alphaGo, { border: true, width: "90%" })}
           </Slide>
 
           <Slide transition={["fade"]}>
-            <iframe width="800" height="600" src="https://www.youtube.com/embed/V1eYniJ0Rnk?start=18" frameborder="0" allowfullscreen></iframe>
+            {this.ytEmbed("https://www.youtube.com/embed/V1eYniJ0Rnk?start=18")}
           </Slide>
 
           <Slide transition={["fade"]}>
-            <iframe width="800" height="600" src="https://www.youtube.com/embed/qv6UVOQ0F44" frameborder="0" allowfullscreen></iframe>
+            {this.ytEmbed("https://www.youtube.com/embed/qv6UVOQ0F44")}
           </Slide>
 
           <Slide transition={["fade"]}>
-            <iframe width="800" height="600" src="https://www.youtube.com/embed/pgaEE27nsQw?start=55" frameborder="0" allowfullscreen></iframe>
+            {this.ytEmbed("https://www.youtube.com/embed/pgaEE27nsQw?start=55")}
           </Slide>
 
           <Slide bgImage={images.cat} align="flex-end flex-end">
-            <Heading style={{textShadow: "0 0 2px black"}}>Hoo Lee Fuk</Heading>
+            <Heading size={2} caps>Hoo Lee Fuk</Heading>
           </Slide>
         </Deck>
       </Spectacle>
