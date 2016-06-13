@@ -47,6 +47,7 @@ const images = {
   terminator: require("../assets/terminator.jpg"),
   agentSmith: require("../assets/agent-smith.jpg"),
   ocr: require("../assets/ocr.jpg"),
+  tasks: require("../assets/tasks.png"),
   fbTag: require("../assets/fb-tag.jpg"),
   googleCar: require("../assets/google-car.jpg"),
   spamAssassin: require("../assets/spam-assassin.jpg"),
@@ -172,14 +173,18 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            {this.image(images.fbTag, { width: "90%" })}
+            {this.image(images.tasks, { width: "60%" })}
           </Slide>
 
           <Slide>
-            {this.image(images.googleCar, { width: "90%" })}
+            {this.image(images.fbTag)}
           </Slide>
 
-          {this.intermezzo("Text Processing")}
+          <Slide>
+            {this.image(images.googleCar)}
+          </Slide>
+
+          {this.intermezzo("Language Processing")}
 
           <Slide>
             {this.image(images.spamAssassin, { border: true, width: "auto" })}
@@ -209,6 +214,10 @@ export default class Presentation extends React.Component {
 
           <Slide transition={["fade"]}>
             {this.videoEmbed("https://www.youtube.com/embed/pgaEE27nsQw?start=55")}
+          </Slide>
+
+          <Slide transition={["fade"]}>
+            {this.videoEmbed("https://www.youtube.com/embed/xOCurBYI_gY?start=913")}
           </Slide>
 
           <Slide bgImage={images.cat} align="flex-end flex-end">
