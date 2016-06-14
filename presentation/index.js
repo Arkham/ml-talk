@@ -59,6 +59,8 @@ const images = {
   linear2: require("../assets/linear2.png"),
   logistic: require("../assets/logistic.png"),
   logistic2: require("../assets/logistic2.png"),
+  overfitting: require("../assets/overfitting.png"),
+  underfitting: require("../assets/underfitting.png"),
   neurons: require("../assets/neurons.jpg"),
   neuralNetwork: require("../assets/neural-network.png"),
   sigmoid: require("../assets/sigmoid.png"),
@@ -330,7 +332,7 @@ export default class Presentation extends React.Component {
                 </Heading>
                 <Appear>
                   <List margin={10} textColor="white">
-                    <ListItem>Liner Regression</ListItem>
+                    <ListItem>Linear Regression</ListItem>
                     <ListItem>Logistic Regression</ListItem>
                     <ListItem>Neural Networks</ListItem>
                   </List>
@@ -371,6 +373,18 @@ export default class Presentation extends React.Component {
             {this.image(images.logistic2, { width: "80%"})}
           </Slide>
 
+          {this.intermezzo('Overfitting')}
+
+          <Slide>
+            {this.image(images.overfitting, { width: "80%"})}
+          </Slide>
+
+          {this.intermezzo('Underfitting')}
+
+          <Slide>
+            {this.image(images.underfitting, { width: "80%"})}
+          </Slide>
+
           {this.intermezzo('Neural Networks')}
 
           <Slide>
@@ -407,8 +421,8 @@ export default class Presentation extends React.Component {
             <Heading fit>Thanks! Questions?</Heading>
 
             <List>
-              <ListItem>Ju Liu</ListItem>
-              <ListItem>@arkh4m</ListItem>
+              <ListItem>arkham.github.io/ml-talk</ListItem>
+              <ListItem>Ju Liu @arkh4m</ListItem>
               <ListItem>AlphaSights</ListItem>
             </List>
           </Slide>
