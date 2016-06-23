@@ -128,6 +128,14 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
+            <Heading size={1}>HI</Heading>
+
+            <Text textColor="white">My name is Ju</Text>
+            <Text textColor="white">You can find me as @arkh4m</Text>
+            <Text textColor="white">I work at AlphaSights</Text>
+          </Slide>
+
+          <Slide>
             {this.image(images.lance)}
           </Slide>
 
@@ -216,10 +224,6 @@ export default class Presentation extends React.Component {
 
           <Slide transition={["fade"]}>
             {this.videoEmbed("https://www.youtube.com/embed/pgaEE27nsQw?start=55")}
-          </Slide>
-
-          <Slide transition={["fade"]}>
-            {this.videoEmbed("https://www.youtube.com/embed/xOCurBYI_gY?start=913")}
           </Slide>
 
           <Slide bgImage={images.cat} align="flex-end flex-end">
@@ -417,13 +421,17 @@ export default class Presentation extends React.Component {
 
           {this.intermezzo("Demo time!")}
 
+          <Slide transition={["fade"]}>
+            {this.videoEmbed("https://www.youtube.com/embed/xOCurBYI_gY?start=913")}
+          </Slide>
+
           <Slide bgColor="black" textColor="primary">
             <Heading fit>Thanks! Questions?</Heading>
 
             <List>
               <ListItem>arkham.github.io/ml-talk</ListItem>
               <ListItem>Ju Liu @arkh4m</ListItem>
-              <ListItem>AlphaSights</ListItem>
+              <ListItem>engineering.alphasights.com</ListItem>
             </List>
           </Slide>
         </Deck>
