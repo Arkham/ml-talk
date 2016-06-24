@@ -116,11 +116,8 @@ export default class Presentation extends React.Component {
       <Spectacle theme={theme}>
         <Deck transition={["fade", "spin"]} transitionDuration={500}>
           <Slide>
-            <Heading size={1} fit caps lineHeight={1.2}>
-              [ 2001: A Space Odissey ]
-            </Heading>
-            <Heading size={1} fit caps lineHeight={1.2}>
-              [ Blade Runner ] [ The Matrix ]
+            <Heading size={1} fit caps lineHeight={1.3}>
+              [ Blade Runner ] [ Ex Machina ]
             </Heading>
             <Heading size={1} fit caps lineHeight={1.3}>
               [ Her ] [ And ] [ <S type="bold" style={{color: "black"}}>You</S> ]
@@ -128,9 +125,9 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Heading size={1}>HI</Heading>
+            <Heading size={1}>HI!</Heading>
 
-            <Text textColor="white">My name is Ju</Text>
+            <Text textColor="white">My name is Ju 🙇🏻</Text>
             <Text textColor="white">You can find me as @arkh4m</Text>
             <Text textColor="white">I work at AlphaSights</Text>
           </Slide>
@@ -179,19 +176,19 @@ export default class Presentation extends React.Component {
           {this.intermezzo("Image Processing")}
 
           <Slide>
-            {this.image(images.ocr, { width: "90%" })}
+            {this.image(images.ocr, { width: "80%" })}
           </Slide>
 
           <Slide>
-            {this.image(images.tasks, { width: "60%" })}
+            {this.image(images.tasks, { width: "40%" })}
           </Slide>
 
           <Slide>
-            {this.image(images.fbTag)}
+            {this.image(images.fbTag, { width: "90%" })}
           </Slide>
 
           <Slide>
-            {this.image(images.googleCar)}
+            {this.image(images.googleCar, { width: "80%" })}
           </Slide>
 
           {this.intermezzo("Language Processing")}
@@ -248,7 +245,6 @@ export default class Presentation extends React.Component {
 
             <BlockQuote>
               <Quote textSize="2.9rem">A computer program is said to learn to perform a {this.whiteSpan("task")} when its performance can be measured by a {this.whiteSpan("metric")} which improves with {this.whiteSpan("experience")}.</Quote>
-              <Cite>me</Cite>
             </BlockQuote>
           </Slide>
 
@@ -295,7 +291,7 @@ export default class Presentation extends React.Component {
               <tbody>
                 <TableRow>
                   <TableItem>Task</TableItem>
-                  <TableItem>Malignant cancer prediction</TableItem>
+                  <TableItem>Malignant tumor prediction</TableItem>
                 </TableRow>
                 <TableRow>
                   <TableItem>Experience</TableItem>
@@ -375,18 +371,6 @@ export default class Presentation extends React.Component {
 
           <Slide>
             {this.image(images.logistic2, { width: "80%"})}
-          </Slide>
-
-          {this.intermezzo('Overfitting')}
-
-          <Slide>
-            {this.image(images.overfitting, { width: "80%"})}
-          </Slide>
-
-          {this.intermezzo('Underfitting')}
-
-          <Slide>
-            {this.image(images.underfitting, { width: "80%"})}
           </Slide>
 
           {this.intermezzo('Neural Networks')}
